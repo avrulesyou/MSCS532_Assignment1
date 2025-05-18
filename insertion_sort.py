@@ -20,10 +20,18 @@ def insertion_sort_decreasing(arr):
     
     return arr
 
+def get_array_from_user():
+    try:
+        user_input = input("\nEnter numbers separated by spaces: ")
+        return [int(x) for x in user_input.split()]
+    except ValueError:
+        print("Invalid input! Please enter numbers only.")
+        return get_array_from_user()
 
 def main():
     print("Welcome to the Insertion Sort Program!")
     print("This program sorts arrays in monotonically decreasing order using Insertion Sort Algorithm.")
+    
     print("\nRunning predefined test cases...")
     test_cases = [
         [5, 2, 4, 6, 1, 3],
@@ -35,5 +43,14 @@ def main():
         print(f"\nOriginal array: {arr}")
         print(f"Sorted array (decreasing): {insertion_sort_decreasing(arr.copy())}")
     
+    while True:
+        choice = input("\nDo you want to use the Insertion Sort Algorithm? (yes/no): ").lower()
+        if choice != 'yes':
+            print("Thank you for using the program. Goodbye!")
+            break
+            
+        user_array = get_array_from_user()
+        print(f"\nOriginal array: {user_array}")
+        print(f"Sorted array (decreasing): {insertion_sort_decreasing(user_array)}")
 
-main() 
+main()
