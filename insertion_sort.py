@@ -44,7 +44,7 @@ def main():
         print(f"Sorted array (decreasing): {insertion_sort_decreasing(arr.copy())}")
     
     while True:
-        choice = input("\nDo you want to use the Insertion Sort Algorithm? (yes/no): ").lower()
+        choice = input("\nDo you want to use the Insertion Sort Algorithm for your own array? (yes/no): ").lower()
         if choice != 'yes':
             print("Thank you for using the program. Goodbye!")
             break
